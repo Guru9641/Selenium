@@ -1,35 +1,25 @@
-package week3.day1;
+package week4.day1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Exercise {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int income = 2000; 
-        int rate = 0; 
+		ChromeDriver driver= new ChromeDriver(); 
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.get("https://www.amazon.in/");
+		driver.findElement(By.linkText("All")).click();
+		driver.findElement(By.linkText("Best Sellers")).click();
+		driver.findElement(By.linkText("Grocery & Gourmet Foods")).click();
+		driver.findElement(By.linkText("Tata Salt, 1kg")).click();
+		
 
-        
-        if (income < 0) {
-            rate = 0;
-        } else if (income < 8925) {
-            rate = 10;  
-        } else if (income < 36250) {
-            rate = 15;  
-        } else if (income < 87850) {
-            rate = 23;  
-        } else if (income < 183250) {
-            rate = 28;  
-        } else if (income < 398350) {
-            rate = 33;  
-        } else if (income < 400000) {
-            rate = 35;  
-        } else {
-            rate = 40;  
-        }
-
-        
-        System.out.println("");
-	
 	}
 
 }
